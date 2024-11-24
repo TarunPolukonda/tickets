@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(5, 244, 5);
+            font-size: larger;
+
+        }
+
+        button {
+            background-color: white;
+            margin: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        Alankar <br>
+        <button id="time" value="11:00AMa"><a href="{{url_for('seats',mname=mname,time='11:00AMa')}}">11:00AM</a></button>
+        <button id="time" value="2:00PMa"><a href="{{url_for('seats',mname=mname,time='2:00PMa')}}">2:00PM</a></button>
+        <button id="time" value="6:00PMa"><a href="{{url_for('seats',mname=mname,time='6:00PMa')}}">6:00PM</a></button>
+        <button id="time" value="9:00PMa"><a href="{{url_for('seats',mname=mname,time='9:00PMa')}}">9:00PM</a></button><br><br>
+        Sailaja <br>
+        <button id="time" value="11:00AMs"><a href="{{url_for('seats',mname=mname,time='11:00AMs')}}">11:00AM</a></button>
+        <button id="time" value="2:00PMs"><a href="{{url_for('seats',mname=mname,time='2:00PMs')}}">2:00PM</a></button>
+        <button id="time" value="6:00PMs"><a href="{{url_for('seats',mname=mname,time='6:00PMs')}}">6:00PM</a></button>
+        <button id="time" value="9:00PMs"><a href="{{url_for('seats',mname=mname,time='9:00PMs')}}">9:00PM</a></button><br><br>
+        PVP Cinemas <br>
+        <button id="time" value="11:00AMp"><a href="{{url_for('seats',mname=mname,time='11:00AMp')}}">11:00AM</a></button>
+        <button id="time" value="2:00PMp"><a href="{{url_for('seats',mname=mname,time='2:00PMp')}}">2:00PM</a></button>
+        <button id="time" value="6:00PMp"><a href="{{url_for('seats',mname=mname,time='6:00PMp')}}">6:00PM</a></button>
+        <button id="time" value="9:00PMp"><a href="{{url_for('seats',mname=mname,time='9:00PMp')}}">9:00PM</a></button><br><br>
+        PVR Cinemas <br>
+        <button id="time" value="11:00AMr"><a href="{{url_for('seats',mname=mname,time='11:00AMr')}}">11:00AM</a></button>
+        <button id="time" value="2:00PMr"><a href="{{url_for('seats',mname=mname,time='2:00PMr')}}">2:00PM</a></button>
+        <button id="time" value="6:00PMr"><a href="{{url_for('seats',mname=mname,time='6:00PMr')}}">6:00PM</a></button>
+        <button id="time" value="9:00PMr"><a href="{{url_for('seats',mname=mname,time='9:00PMr')}}">9:00PM</a></button><br><br>
+        Trendset <br>
+        <button id="time" value="11:00AMt"><a href="{{url_for('seats',mname=mname,time='11:00AMt')}}">11:00AM</a></button>
+        <button id="time" value="2:00PMt"><a href="{{url_for('seats',mname=mname,time='2:00PMt')}}">2:00PM</a></button>
+        <button id="time" value="6:00PMt"><a href="{{url_for('seats',mname=mname,time='6:00PMt')}}">6:00PM</a></button>
+        <button id="time" value="9:00PMt"><a href="{{url_for('seats',mname=mname,time='9:00PMt')}}">9:00PM</a></button><br><br>
+    </center>
+
+</body>
+
+</html>

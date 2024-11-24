@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .ticket-container {
+            background-color: #fff;
+            width: 380px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #dcdcdc;
+        }
+        .ticket-header {
+            background-color: #ff4242;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+        }
+        .ticket-header h2 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .ticket-body {
+            padding: 20px;
+            position: relative;
+        }
+        .ticket-details {
+            margin-bottom: 15px;
+        }
+        .ticket-details div {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .ticket-details div:last-child {
+            border: none;
+        }
+        .terms {
+            font-size: 10px;
+            color: #777;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px dashed #dcdcdc;
+        }
+        /* Tear dots styling */
+        .tear-dots {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            background-color: #fff;
+        }
+        .left-dots {
+            left: -10px;
+        }
+        .right-dots {
+            right: -10px;
+        }
+        .dot {
+            height: 5px;
+            width: 5px;
+            background-color: #aaa;
+            border-radius: 50%;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <div class="ticket-header">
+            <h2>BookMyShow</h2>
+        </div>
+        <div class="ticket-body">
+            <div class="ticket-details">
+                <div>
+                    <strong>Movie</strong> <span>Avengers: Endgame</span>
+                </div>
+                <div>
+                    <strong>Date</strong> <span>27th September 2024</span>
+                </div>
+                <div>
+                    <strong>Time</strong> <span>7:30 PM</span>
+                </div>
+                <div>
+                    <strong>Screen</strong> <span>Screen 5</span>
+                </div>
+                <div>
+                    <strong>Seat</strong> <span>Row A, Seat 12</span>
+                </div>
+                <div>
+                    <strong>Theater</strong> <span>PVR Cinemas</span>
+                </div>
+                <div>
+                    <strong>Price</strong> <span>$12.00</span>
+                </div>
+            </div>
+            <!-- Tear dots on the sides -->
+            <div class="tear-dots left-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="tear-dots right-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="terms">
+            <p>* Please arrive 15 minutes early. No refunds on cancellation.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A1">A1</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A2">A2</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A3">A3</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A4">A4</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A5">A5</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A6">A6</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A7">A7</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A8">A8</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A9">A9</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A10">A10</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A11">A11</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A12">A12</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A13">A13</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A14">A14</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A15">A15</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A16">A16</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A17">A17</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A18">A18</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A19">A19</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="A20">A20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B1">B1</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B2">B2</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B3">B3</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B4">B4</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B5">B5</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B6">B6</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B7">B7</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B8">B8</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B9">B9</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B10">B10</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B11">B11</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B12">B12</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B13">B13</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B14">B14</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B15">B15</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B16">B16</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B17">B17</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B18">B18</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B19">B19</button>
+    <button class="seat" type="button" name="seat" onclick="toggleSeat(this)" value="B20">B20</button>
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="C1" onclick="toggleSeat(this)">C1</button>
+    <button class="seat" type="button" name="seat" value="C2" onclick="toggleSeat(this)">C2</button>
+    <button class="seat" type="button" name="seat" value="C3" onclick="toggleSeat(this)">C3</button>
+    <button class="seat" type="button" name="seat" value="C4" onclick="toggleSeat(this)">C4</button>
+    <button class="seat" type="button" name="seat" value="C5" onclick="toggleSeat(this)">C5</button>
+    <button class="seat" type="button" name="seat" value="C6" onclick="toggleSeat(this)">C6</button>
+    <button class="seat" type="button" name="seat" value="C7" onclick="toggleSeat(this)">C7</button>
+    <button class="seat" type="button" name="seat" value="C8" onclick="toggleSeat(this)">C8</button>
+    <button class="seat" type="button" name="seat" value="C9" onclick="toggleSeat(this)">C9</button>
+    <button class="seat" type="button" name="seat" value="C10" onclick="toggleSeat(this)">C10</button>
+    <button class="seat" type="button" name="seat" value="C11" onclick="toggleSeat(this)">C11</button>
+    <button class="seat" type="button" name="seat" value="C12" onclick="toggleSeat(this)">C12</button>
+    <button class="seat" type="button" name="seat" value="C13" onclick="toggleSeat(this)">C13</button>
+    <button class="seat" type="button" name="seat" value="C14" onclick="toggleSeat(this)">C14</button>
+    <button class="seat" type="button" name="seat" value="C15" onclick="toggleSeat(this)">C15</button>
+    <button class="seat" type="button" name="seat" value="C16" onclick="toggleSeat(this)">C16</button>
+    <button class="seat" type="button" name="seat" value="C17" onclick="toggleSeat(this)">C17</button>
+    <button class="seat" type="button" name="seat" value="C18" onclick="toggleSeat(this)">C18</button>
+    <button class="seat" type="button" name="seat" value="C19" onclick="toggleSeat(this)">C19</button>
+    <button class="seat" type="button" name="seat" value="C20" onclick="toggleSeat(this)">C20</button>
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="D1" onclick="toggleSeat(this)">D1</button>
+    <button class="seat" type="button" name="seat" value="D2" onclick="toggleSeat(this)">D2</button>
+    <button class="seat" type="button" name="seat" value="D3" onclick="toggleSeat(this)">D3</button>
+    <button class="seat" type="button" name="seat" value="D4" onclick="toggleSeat(this)">D4</button>
+    <button class="seat" type="button" name="seat" value="D5" onclick="toggleSeat(this)">D5</button>
+    <button class="seat" type="button" name="seat" value="D6" onclick="toggleSeat(this)">D6</button>
+    <button class="seat" type="button" name="seat" value="D7" onclick="toggleSeat(this)">D7</button>
+    <button class="seat" type="button" name="seat" value="D8" onclick="toggleSeat(this)">D8</button>
+    <button class="seat" type="button" name="seat" value="D9" onclick="toggleSeat(this)">D9</button>
+    <button class="seat" type="button" name="seat" value="D10" onclick="toggleSeat(this)">D10</button>
+    <button class="seat" type="button" name="seat" value="D11" onclick="toggleSeat(this)">D11</button>
+    <button class="seat" type="button" name="seat" value="D12" onclick="toggleSeat(this)">D12</button>
+    <button class="seat" type="button" name="seat" value="D13" onclick="toggleSeat(this)">D13</button>
+    <button class="seat" type="button" name="seat" value="D14" onclick="toggleSeat(this)">D14</button>
+    <button class="seat" type="button" name="seat" value="D15" onclick="toggleSeat(this)">D15</button>
+    <button class="seat" type="button" name="seat" value="D16" onclick="toggleSeat(this)">D16</button>
+    <button class="seat" type="button" name="seat" value="D17" onclick="toggleSeat(this)">D17</button>
+    <button class="seat" type="button" name="seat" value="D18" onclick="toggleSeat(this)">D18</button>
+    <button class="seat" type="button" name="seat" value="D19" onclick="toggleSeat(this)">D19</button>
+    <button class="seat" type="button" name="seat" value="D20" onclick="toggleSeat(this)">D20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="E1" onclick="toggleSeat(this)">E1</button>
+    <button class="seat" type="button" name="seat" value="E2" onclick="toggleSeat(this)">E2</button>
+    <button class="seat" type="button" name="seat" value="E3" onclick="toggleSeat(this)">E3</button>
+    <button class="seat" type="button" name="seat" value="E4" onclick="toggleSeat(this)">E4</button>
+    <button class="seat" type="button" name="seat" value="E5" onclick="toggleSeat(this)">E5</button>
+    <button class="seat" type="button" name="seat" value="E6" onclick="toggleSeat(this)">E6</button>
+    <button class="seat" type="button" name="seat" value="E7" onclick="toggleSeat(this)">E7</button>
+    <button class="seat" type="button" name="seat" value="E8" onclick="toggleSeat(this)">E8</button>
+    <button class="seat" type="button" name="seat" value="E9" onclick="toggleSeat(this)">E9</button>
+    <button class="seat" type="button" name="seat" value="E10" onclick="toggleSeat(this)">E10</button>
+    <button class="seat" type="button" name="seat" value="E11" onclick="toggleSeat(this)">E11</button>
+    <button class="seat" type="button" name="seat" value="E12" onclick="toggleSeat(this)">E12</button>
+    <button class="seat" type="button" name="seat" value="E13" onclick="toggleSeat(this)">E13</button>
+    <button class="seat" type="button" name="seat" value="E14" onclick="toggleSeat(this)">E14</button>
+    <button class="seat" type="button" name="seat" value="E15" onclick="toggleSeat(this)">E15</button>
+    <button class="seat" type="button" name="seat" value="E16" onclick="toggleSeat(this)">E16</button>
+    <button class="seat" type="button" name="seat" value="E17" onclick="toggleSeat(this)">E17</button>
+    <button class="seat" type="button" name="seat" value="E18" onclick="toggleSeat(this)">E18</button>
+    <button class="seat" type="button" name="seat" value="E19" onclick="toggleSeat(this)">E19</button>
+    <button class="seat" type="button" name="seat" value="E20" onclick="toggleSeat(this)">E20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="F1" onclick="toggleSeat(this)">F1</button>
+    <button class="seat" type="button" name="seat" value="F2" onclick="toggleSeat(this)">F2</button>
+    <button class="seat" type="button" name="seat" value="F3" onclick="toggleSeat(this)">F3</button>
+    <button class="seat" type="button" name="seat" value="F4" onclick="toggleSeat(this)">F4</button>
+    <button class="seat" type="button" name="seat" value="F5" onclick="toggleSeat(this)">F5</button>
+    <button class="seat" type="button" name="seat" value="F6" onclick="toggleSeat(this)">F6</button>
+    <button class="seat" type="button" name="seat" value="F7" onclick="toggleSeat(this)">F7</button>
+    <button class="seat" type="button" name="seat" value="F8" onclick="toggleSeat(this)">F8</button>
+    <button class="seat" type="button" name="seat" value="F9" onclick="toggleSeat(this)">F9</button>
+    <button class="seat" type="button" name="seat" value="F10" onclick="toggleSeat(this)">F10</button>
+    <button class="seat" type="button" name="seat" value="F11" onclick="toggleSeat(this)">F11</button>
+    <button class="seat" type="button" name="seat" value="F12" onclick="toggleSeat(this)">F12</button>
+    <button class="seat" type="button" name="seat" value="F13" onclick="toggleSeat(this)">F13</button>
+    <button class="seat" type="button" name="seat" value="F14" onclick="toggleSeat(this)">F14</button>
+    <button class="seat" type="button" name="seat" value="F15" onclick="toggleSeat(this)">F15</button>
+    <button class="seat" type="button" name="seat" value="F16" onclick="toggleSeat(this)">F16</button>
+    <button class="seat" type="button" name="seat" value="F17" onclick="toggleSeat(this)">F17</button>
+    <button class="seat" type="button" name="seat" value="F18" onclick="toggleSeat(this)">F18</button>
+    <button class="seat" type="button" name="seat" value="F19" onclick="toggleSeat(this)">F19</button>
+    <button class="seat" type="button" name="seat" value="F20" onclick="toggleSeat(this)">F20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="G1" onclick="toggleSeat(this)">G1</button>
+    <button class="seat" type="button" name="seat" value="G2" onclick="toggleSeat(this)">G2</button>
+    <button class="seat" type="button" name="seat" value="G3" onclick="toggleSeat(this)">G3</button>
+    <button class="seat" type="button" name="seat" value="G4" onclick="toggleSeat(this)">G4</button>
+    <button class="seat" type="button" name="seat" value="G5" onclick="toggleSeat(this)">G5</button>
+    <button class="seat" type="button" name="seat" value="G6" onclick="toggleSeat(this)">G6</button>
+    <button class="seat" type="button" name="seat" value="G7" onclick="toggleSeat(this)">G7</button>
+    <button class="seat" type="button" name="seat" value="G8" onclick="toggleSeat(this)">G8</button>
+    <button class="seat" type="button" name="seat" value="G9" onclick="toggleSeat(this)">G9</button>
+    <button class="seat" type="button" name="seat" value="G10" onclick="toggleSeat(this)">G10</button>
+    <button class="seat" type="button" name="seat" value="G11" onclick="toggleSeat(this)">G11</button>
+    <button class="seat" type="button" name="seat" value="G12" onclick="toggleSeat(this)">G12</button>
+    <button class="seat" type="button" name="seat" value="G13" onclick="toggleSeat(this)">G13</button>
+    <button class="seat" type="button" name="seat" value="G14" onclick="toggleSeat(this)">G14</button>
+    <button class="seat" type="button" name="seat" value="G15" onclick="toggleSeat(this)">G15</button>
+    <button class="seat" type="button" name="seat" value="G16" onclick="toggleSeat(this)">G16</button>
+    <button class="seat" type="button" name="seat" value="G17" onclick="toggleSeat(this)">G17</button>
+    <button class="seat" type="button" name="seat" value="G18" onclick="toggleSeat(this)">G18</button>
+    <button class="seat" type="button" name="seat" value="G19" onclick="toggleSeat(this)">G19</button>
+    <button class="seat" type="button" name="seat" value="G20" onclick="toggleSeat(this)">G20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="H1" onclick="toggleSeat(this)">H1</button>
+    <button class="seat" type="button" name="seat" value="H2" onclick="toggleSeat(this)">H2</button>
+    <button class="seat" type="button" name="seat" value="H3" onclick="toggleSeat(this)">H3</button>
+    <button class="seat" type="button" name="seat" value="H4" onclick="toggleSeat(this)">H4</button>
+    <button class="seat" type="button" name="seat" value="H5" onclick="toggleSeat(this)">H5</button>
+    <button class="seat" type="button" name="seat" value="H6" onclick="toggleSeat(this)">H6</button>
+    <button class="seat" type="button" name="seat" value="H7" onclick="toggleSeat(this)">H7</button>
+    <button class="seat" type="button" name="seat" value="H8" onclick="toggleSeat(this)">H8</button>
+    <button class="seat" type="button" name="seat" value="H9" onclick="toggleSeat(this)">H9</button>
+    <button class="seat" type="button" name="seat" value="H10" onclick="toggleSeat(this)">H10</button>
+    <button class="seat" type="button" name="seat" value="H11" onclick="toggleSeat(this)">H11</button>
+    <button class="seat" type="button" name="seat" value="H12" onclick="toggleSeat(this)">H12</button>
+    <button class="seat" type="button" name="seat" value="H13" onclick="toggleSeat(this)">H13</button>
+    <button class="seat" type="button" name="seat" value="H14" onclick="toggleSeat(this)">H14</button>
+    <button class="seat" type="button" name="seat" value="H15" onclick="toggleSeat(this)">H15</button>
+    <button class="seat" type="button" name="seat" value="H16" onclick="toggleSeat(this)">H16</button>
+    <button class="seat" type="button" name="seat" value="H17" onclick="toggleSeat(this)">H17</button>
+    <button class="seat" type="button" name="seat" value="H18" onclick="toggleSeat(this)">H18</button>
+    <button class="seat" type="button" name="seat" value="H19" onclick="toggleSeat(this)">H19</button>
+    <button class="seat" type="button" name="seat" value="H20" onclick="toggleSeat(this)">H20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="I1" onclick="toggleSeat(this)">I1</button>
+    <button class="seat" type="button" name="seat" value="I2" onclick="toggleSeat(this)">I2</button>
+    <button class="seat" type="button" name="seat" value="I3" onclick="toggleSeat(this)">I3</button>
+    <button class="seat" type="button" name="seat" value="I4" onclick="toggleSeat(this)">I4</button>
+    <button class="seat" type="button" name="seat" value="I5" onclick="toggleSeat(this)">I5</button>
+    <button class="seat" type="button" name="seat" value="I6" onclick="toggleSeat(this)">I6</button>
+    <button class="seat" type="button" name="seat" value="I7" onclick="toggleSeat(this)">I7</button>
+    <button class="seat" type="button" name="seat" value="I8" onclick="toggleSeat(this)">I8</button>
+    <button class="seat" type="button" name="seat" value="I9" onclick="toggleSeat(this)">I9</button>
+    <button class="seat" type="button" name="seat" value="I10" onclick="toggleSeat(this)">I10</button>
+    <button class="seat" type="button" name="seat" value="I11" onclick="toggleSeat(this)">I11</button>
+    <button class="seat" type="button" name="seat" value="I12" onclick="toggleSeat(this)">I12</button>
+    <button class="seat" type="button" name="seat" value="I13" onclick="toggleSeat(this)">I13</button>
+    <button class="seat" type="button" name="seat" value="I14" onclick="toggleSeat(this)">I14</button>
+    <button class="seat" type="button" name="seat" value="I15" onclick="toggleSeat(this)">I15</button>
+    <button class="seat" type="button" name="seat" value="I16" onclick="toggleSeat(this)">I16</button>
+    <button class="seat" type="button" name="seat" value="I17" onclick="toggleSeat(this)">I17</button>
+    <button class="seat" type="button" name="seat" value="I18" onclick="toggleSeat(this)">I18</button>
+    <button class="seat" type="button" name="seat" value="I19" onclick="toggleSeat(this)">I19</button>
+    <button class="seat" type="button" name="seat" value="I20" onclick="toggleSeat(this)">I20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="J1" onclick="toggleSeat(this)">J1</button>
+    <button class="seat" type="button" name="seat" value="J2" onclick="toggleSeat(this)">J2</button>
+    <button class="seat" type="button" name="seat" value="J3" onclick="toggleSeat(this)">J3</button>
+    <button class="seat" type="button" name="seat" value="J4" onclick="toggleSeat(this)">J4</button>
+    <button class="seat" type="button" name="seat" value="J5" onclick="toggleSeat(this)">J5</button>
+    <button class="seat" type="button" name="seat" value="J6" onclick="toggleSeat(this)">J6</button>
+    <button class="seat" type="button" name="seat" value="J7" onclick="toggleSeat(this)">J7</button>
+    <button class="seat" type="button" name="seat" value="J8" onclick="toggleSeat(this)">J8</button>
+    <button class="seat" type="button" name="seat" value="J9" onclick="toggleSeat(this)">J9</button>
+    <button class="seat" type="button" name="seat" value="J10" onclick="toggleSeat(this)">J10</button>
+    <button class="seat" type="button" name="seat" value="J11" onclick="toggleSeat(this)">J11</button>
+    <button class="seat" type="button" name="seat" value="J12" onclick="toggleSeat(this)">J12</button>
+    <button class="seat" type="button" name="seat" value="J13" onclick="toggleSeat(this)">J13</button>
+    <button class="seat" type="button" name="seat" value="J14" onclick="toggleSeat(this)">J14</button>
+    <button class="seat" type="button" name="seat" value="J15" onclick="toggleSeat(this)">J15</button>
+    <button class="seat" type="button" name="seat" value="J16" onclick="toggleSeat(this)">J16</button>
+    <button class="seat" type="button" name="seat" value="J17" onclick="toggleSeat(this)">J17</button>
+    <button class="seat" type="button" name="seat" value="J18" onclick="toggleSeat(this)">J18</button>
+    <button class="seat" type="button" name="seat" value="J19" onclick="toggleSeat(this)">J19</button>
+    <button class="seat" type="button" name="seat" value="J20" onclick="toggleSeat(this)">J20</button>
+
+</div>
+<div class="seat-row">
+    <button class="seat" type="button" name="seat" value="K1" onclick="toggleSeat(this)">K1</button>
+    <button class="seat" type="button" name="seat" value="K2" onclick="toggleSeat(this)">K2</button>
+    <button class="seat" type="button" name="seat" value="K3" onclick="toggleSeat(this)">K3</button>
+    <button class="seat" type="button" name="seat" value="K4" onclick="toggleSeat(this)">K4</button>
+    <button class="seat" type="button" name="seat" value="K5" onclick="toggleSeat(this)">K5</button>
+    <button class="seat" type="button" name="seat" value="K6" onclick="toggleSeat(this)">K6</button>
+    <button class="seat" type="button" name="seat" value="K7" onclick="toggleSeat(this)">K7</button>
+    <button class="seat" type="button" name="seat" value="K8" onclick="toggleSeat(this)">K8</button>
+    <button class="seat" type="button" name="seat" value="K9" onclick="toggleSeat(this)">K9</button>
+    <button class="seat" type="button" name="seat" value="K10" onclick="toggleSeat(this)">K10</button>
+    <button class="seat" type="button" name="seat" value="K11" onclick="toggleSeat(this)">K11</button>
+    <button class="seat" type="button" name="seat" value="K12" onclick="toggleSeat(this)">K12</button>
+    <button class="seat" type="button" name="seat" value="K13" onclick="toggleSeat(this)">K13</button>
+    <button class="seat" type="button" name="seat" value="K14" onclick="toggleSeat(this)">K14</button>
+    <button class="seat" type="button" name="seat" value="K15" onclick="toggleSeat(this)">K15</button>
+    <button class="seat" type="button" name="seat" value="K16" onclick="toggleSeat(this)">K16</button>
+    <button class="seat" type="button" name="seat" value="K17" onclick="toggleSeat(this)">K17</button>
+    <button class="seat" type="button" name="seats" value="K18" onclick="toggleSeat(this)">K18</button>
+    <button class="seat" type="button" name="seats" value="K19" onclick="toggleSeat(this)">K19</button>
+    <button class="seat" type="button" name="seats" value="K20" onclick="toggleSeat(this)" >K20</button>
+
+</div>

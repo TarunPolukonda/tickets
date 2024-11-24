@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+        }
+        .ticket-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .ticket-card img {
+            width: 100%;
+            height: auto;
+        }
+        .ticket-details {
+            padding: 20px;
+        }
+        .movie-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+        .show-time {
+            font-size: 1.1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .book-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-card">
+        <img src="{{ url_for('static', filename=mname + '.jpeg') }}" alt="Movie Poster">
+
+        <div class="ticket-details">
+            <h2 class="movie-name">{{mname}}</h2>
+            <p class="show-time">Showtime: {{time[:-1]}}</p>
+            <a href="{{url_for('movies')}}" class="book-button">Home</a>
+        </div>
+    </div>
+</body>
+</html>

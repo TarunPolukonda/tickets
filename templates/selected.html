@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .screen {
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            background-color: #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .seat {
+            margin: 5px;
+            width: 40px;
+            height: 40px;
+            background-color: #4CAF50;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: #f00;
+        }
+
+        .seat.booked {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .seat-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        #pay {
+            width: 80%;
+            margin: 20px auto;
+            margin-left: 8%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #f00;
+            border: none;
+            color: #fff;
+            cursor: not-allowed;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        #pay.active {
+            pointer-events: auto;
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post" id="pay-link">
+        <div class="container">
+            <div class="screen">SCREEN</div>
+            <div class="seat-row">
+                <!-- Loop through each seat and disable booked ones -->
+                {% for seat in ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'] %}
+                <button class="seat {% if seat in booked_seats %}booked{% endif %}" 
+                        type="button" 
+                        name="seat" 
+                        onclick="toggleSeat(this)" 
+                        value="{{ seat }}"
+                        {% if seat in booked_seats %} disabled{% endif %}>
+                    {{ seat }}
+                </button>
+                {% endfor %}
+            </div>
+            <!-- Add more seat rows similarly -->
+            
+            <button id="pay" type="submit">Pay Now</button>
+        </div>
+    </form>
+
+    <script>
+        function toggleSeat(seat) {
+            if (!seat.classList.contains('booked')) {
+                seat.classList.toggle("selected");
+                activatePayButton();
+            }
+        }
+
+        function activatePayButton() {
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            const payButton = document.getElementById('pay');
+            const payLink = document.getElementById('pay-link');
+            let count = selectedSeats.length;
+            let seatValues = [];
+
+            // Collect seat values from selected buttons
+            selectedSeats.forEach(seat => {
+                seatValues.push(seat.value); // Access the value attribute of the button
+            });
+
+            if (count > 0) {
+                payButton.classList.add('active');
+                payButton.disabled = false; // Enable the button
+                // Update the form action URL to include seat values
+                const url = `/pay/{{ mname }}/177,${count}?seats=${encodeURIComponent(seatValues.join(','))}`;
+                console.log(url); // For debugging: print the URL to the console
+                payLink.setAttribute('action', url); // Update the form action
+            } else {
+                payButton.classList.remove('active');
+                payButton.disabled = true; // Disable the button when no seats are selected
+                payLink.removeAttribute('action');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

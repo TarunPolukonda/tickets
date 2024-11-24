@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with Razorpay</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        #rzp-button1 {
+            background-color: rgba(255, 0, 0, 0.599);
+            color: white;
+            width: 50%;
+            margin-left: 20%;
+            margin-top: 8%;
+            border-radius: 30px;
+            padding: 2%;
+            cursor: pointer;
+        }
+        #rzp-button1:hover {
+            cursor: pointer;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pay for {{ name }} - ₹{{ order.amount / 100 }}</h2>
+        
+        <button id="rzp-button1">Pay Now</button>
+
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+            // Pass `seat_list` directly as a JSON string from Flask
+            var seat_list = JSON.parse('{{ seat_list | tojson }}');
+            console.log("Parsed Seat List:", seat_list);
+            var time=time
+            var options = {
+                "key": "rzp_test_c6m46TaGhi7qx3", // Enter your Razorpay Key ID here
+                "amount": "{{ order.amount }}", // Amount in paise
+                "currency": "INR",
+                "name": "{{ name }}",
+                "description": "Ticket Booking Payment",
+                "image": "https://example.com/your_logo", // Your logo URL
+                "handler": function (response) {
+                    // Redirect to success route with the payment details
+                    var form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = '/success/{{ name }}/{{ time }}';
+
+                    // Add payment details to the form
+                    form.innerHTML = `
+                        <input type="hidden" name="razorpay_payment_id" value="${response.razorpay_payment_id}">
+                        <input type="hidden" name="razorpay_order_id" value="${response.razorpay_order_id}">
+                        <input type="hidden" name="razorpay_signature" value="${response.razorpay_signature}">
+                        <input type="hidden" name="seat_list" value='${JSON.stringify(seat_list)}'>
+                        <input type="hidden" name="time" value="{{ time }}">
+                    `;
+
+                    document.body.appendChild(form);
+                    form.submit();
+                },
+                "prefill": {
+                    "name": "Test User",
+                    "email": "{{ session_email }}", // Pass email from Flask context
+                    "contact": "9999999999"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            document.getElementById('rzp-button1').onclick = function(e) {
+                rzp1.open();
+                e.preventDefault();
+            };
+        </script>
+    </div>
+</body>
+</html>

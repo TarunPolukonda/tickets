@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <style>
+       .movie{
+        padding: 0% 5% 0% 5%;
+        
+       }
+       .movie img{
+        width: 15%;
+       }
+       .container{
+        display: flex;
+       }
+       .card .card-img-top{
+        width: 100%;
+       }
+       .navbar1{
+        background-color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+       }
+       .form-control{
+        width: 50%;
+       }
+
+    </style>
+</head>
+<body>
+    <form method="post">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a class="navbar-brand" href="#">Movie</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('movies')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">My Shows</a>
+                </li>
+                
+              </ul>
+             
+            </div>
+          </nav>
+          
+    <div class="movie">
+      <a href="{{url_for('theaters',mname='Devara')}}" id="Devara"><img src="{{url_for('static',filename='Devara.jpeg')}}" alt="Devara"></a>
+      <a href="{{url_for('theaters',mname='Mathu Vadalara')}}" id="Mathu vadalara"><img src="{{url_for('static',filename='Mathu Vadalara.jpeg')}}" alt="Mathu Vadalara 2"></a>
+        <a href="{{url_for('theaters',mname='Amaran')}}"><img src="{{url_for('static',filename='Amaran.jpeg')}}" alt="Amaran" ></a>
+        <a href="{{url_for('theaters',mname='Zebra')}}"><img src="{{url_for('static',filename='Zebra.jpeg')}}" alt="Zebra"></a>
+        <a href="{{url_for('theaters',mname='Sabarmati Report')}}"><img src="{{url_for('static',filename='Sabarmati Report.jpeg')}}" alt="Sabarmati Report"></a>
+        <a href="{{url_for('theaters',mname='Mechanic Rocky')}}"><img src="{{url_for('static',filename='Mechanic Rocky.jpeg')}}" alt="Mechanic Rocky"></a>
+        <a href="{{url_for('theaters',mname='Matka')}}"><img src="{{url_for('static',filename='Matka.jpeg')}}" alt="Matka"></a>
+        <a href="{{url_for('theaters',mname='KA')}}"><img src="{{url_for('static',filename='KA.jpeg')}}" alt="KA"></a>
+        <a href="{{url_for('theaters',mname='Lucky Bhasker')}}"><img src="{{url_for('static',filename='Lucky Bhasker.jpeg')}}" alt="IB"></a>
+        <a href="{{url_for('theaters',mname='Kanguva')}}"><img src="{{url_for('static',filename='Kanguva.jpeg')}}
+          " alt="Kanguva"></a>
+        <a href="{{url_for('theaters',mname='wicked')}}"><img src="{{url_for('static',filename='wicked.jpeg')}}
+          " alt="wicked"></a>
+        <a href="{{url_for('theaters',mname='gladiator')}}"><img src="{{url_for('static',filename='gladiator.jpeg')}}
+          " alt="Gladiator"></a>
+
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</body>
+</html>

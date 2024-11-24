@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+            color: #fff;
+            background: linear-gradient(90deg, #f39c12, #e74c3c);
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        /* Hover Effects */
+        .button:hover {
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        /* Active State */
+        .button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Additional Styles for Placement */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
+            margin-top: 20px;
+        }
+        </style>
+        
+    
+</head>
+<body>
+    <div class="button-container">
+        <a href="/login" class="button">Sign In</a>
+        <a href="/register" class="button">Sign Up</a>
+    </div>
+    
+</body>
+</html>
